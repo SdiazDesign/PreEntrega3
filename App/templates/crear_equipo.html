@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Crear Equipo</h1>
+
+    <form action="/App/grabar_equipo/" method="POST"> 
+        
+        {% csrf_token %}
+        
+        <p>
+            Nombre : <input type="text" name="nombre"> 
+        </p>
+        
+        <p>
+            Fecha Fundación : <input type="date" name="fechafundacion"> 
+        </p>
+        
+        <p>
+            <input type="submit" value="Guardar"> 
+        </p>
+
+    </form>
+
+{% endblock %}

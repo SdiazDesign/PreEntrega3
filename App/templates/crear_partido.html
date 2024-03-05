@@ -1,0 +1,49 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Crear Partido</h1>
+
+    <form action="/App/grabar_partido/" method="POST"> 
+        
+        {% csrf_token %}
+       
+        <p>
+            Equipo Local : 
+            <select name="equipo_local">
+                <option value=""></option>
+                {% for equipo in equipos %}
+                    <option value="{{equipo.id}}">
+                        {{equipo.nombre}}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+        
+        <p>
+            Equipo Visitante :
+            <select name="equipo_visitante">
+                <option value=""></option>
+                {% for equipo in equipos %}
+                    <option value="{{equipo.id}}">
+                        {{equipo.nombre}}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <p>
+            Fecha : <input type="date" name="fecha"> 
+        </p>
+
+        <p>
+            Hora : <input type="time" name="hora"> 
+        </p>
+        
+        <p>
+            <input type="submit" value="Guardar"> 
+        </p>
+
+    </form>
+
+{% endblock %}

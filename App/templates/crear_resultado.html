@@ -1,0 +1,38 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Crear Resultado</h1>
+
+    <form action="/App/grabar_resultado/" method="POST"> 
+        
+        {% csrf_token %}
+       
+        <p>
+            Partido : 
+            <select name="partidos">
+                <option value=""></option>
+                {% for partido in partidos %}
+                    <option value="{{partido.id}}">
+                        {{ partido.fecha }} - {{ partido.hora }} {{ partido.equipo_local.nombre }} vs {{ partido.equipo_visitante.nombre }}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+        
+        
+        <p>
+            Equipo Local : <input type="number" name="equipo_local" min="0" max="10">  
+        </p>
+
+        <p>
+            Equipo Visitante : <input type="number" name="equipo_visitante" min="0" max="10"> 
+        </p>
+        
+        <p>
+            <input type="submit" value="Guardar"> 
+        </p>
+
+    </form>
+
+{% endblock %}
