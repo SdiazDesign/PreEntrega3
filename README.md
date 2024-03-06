@@ -17,11 +17,11 @@ python manage.py makemigrations
 ## Urls
 El Proyecto cuenta con las siguients url.
 
-http://127.0.0.1:8000/App/
-http://127.0.0.1:8000/App/crear_equipo/
-http://127.0.0.1:8000/App/crear_partido/
-http://127.0.0.1:8000/App/crear_resultado/
-http://127.0.0.1:8000/App/get_resultado/
-http://127.0.0.1:8000/App/buscar_resultado/
+- http://127.0.0.1:8000/App/
+- http://127.0.0.1:8000/App/crear_equipo/
+- http://127.0.0.1:8000/App/crear_partido/
+- http://127.0.0.1:8000/App/crear_resultado/
+- http://127.0.0.1:8000/App/get_resultado/
+- http://127.0.0.1:8000/App/buscar_resultado/
 
 Igualmente, cada una de ellas es accesible desde el menu del navbar. 
