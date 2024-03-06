@@ -2,12 +2,10 @@
 
 {% block section %}
 
-    <h1>Crear Resultado</h1>
+    <h1>Buscar Resultado</h1>
 
-    <form action="/App/grabar_resultado/" method="POST"> 
+    <form action="/App/get_resultado/" method="GET"> 
         
-        {% csrf_token %}
-       
         <p>
             Partido : 
             <select name="partido" class="form-control">
@@ -20,17 +18,8 @@
             </select>
         </p>
         
-        
         <p>
-            Goles Equipo Local : <input type="number" name="equipo_local" min="0" max="10" class="form-control">  
-        </p>
-
-        <p>
-            Goles Equipo Visitante : <input type="number" name="equipo_visitante" min="0" max="10" class="form-control"> 
-        </p>
-        
-        <p>
-            <input type="submit" value="Guardar" class="btn btn-secondary"> 
+            <input type="submit" value="Buscar" class="btn btn-secondary"> 
         </p>
 
     </form>

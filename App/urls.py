@@ -8,7 +8,7 @@ urlpatterns = [
     path('grabar_partido/', grabar_partido, name="grabar_partido"),
     path('crear_resultado/', crear_resultado, name="crear_resultado"),
     path('grabar_resultado/', grabar_resultado, name="grabar_resultado"),
-    # path('get_resultado/', get_resultado, name="get_resultado"),
-    # path('buscar_resultado/', buscar_resultado, name="resultado_buscar_resultado"),
+    path('get_resultado/', get_resultado, name="get_resultado"),
+    path('buscar_resultado/', buscar_resultado, name="buscar_resultado"),
     path('', home, name="home"),
 ]

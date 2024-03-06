@@ -75,6 +75,7 @@ def grabar_partido(request):
     return render(request, "home.html")
 
 def grabar_resultado(request): 
+
     if request.method == "POST":
 
         form = ResultadosForm(request.POST)
@@ -83,38 +84,48 @@ def grabar_resultado(request):
             
             info = form.cleaned_data
 
-            partido = Resultados(
+            resultado = Resultados(
                 partido = info["partido"],
                 equipo_local = info["equipo_local"],
                 equipo_visitante = info["equipo_visitante"]
             )
 
-            partido.save()
+            resultado.save()
 
     return render(request, "home.html")
 
+def get_resultado(request):
 
-
-
-
-def buscar_equipo(request):
-
-    id = request.GET["id"]
+    id = request.GET["partido"]
 
     if id:
-        equipos = Equipos.objects.filter(id__iexact=id)
-
-        #return HttpResponse(cursos)
+        
+        # resultado = Resultados.objects.filter(id__iexact=id).values()
+        resultado = Resultados.objects.filter(id__iexact=id)[0]
 
         info = {
             "id" : id,
-            "equipos" : equipos,
+            "resultado" : resultado,
         }
 
-        return render(request, "resultados_busqueda_equipo.html", info)
+        return render(request, "get_resultado.html", info)
     
     else : 
 
         response = "No enviaste datos"
 
         return HttpResponse(response)
+
+def buscar_resultado(request):
+
+    partidos = Partidos.objects.select_related('equipo_local', 'equipo_visitante')
+
+    info = {
+        "partidos" : partidos 
+    }
+
+    return render(request, "buscar_resultado.html", info)
+
+    
+    
+    

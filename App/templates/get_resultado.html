@@ -1,0 +1,15 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Resultado </h1>
+
+    <p>
+        Equipo Local : <input type="number" name="equipo_local" min="0" max="10" value="{{ resultado.equipo_local }}" class="form-control" readonly>  
+    </p>
+
+    <p>
+        Equipo Visitante : <input type="number" name="equipo_visitante" min="0" max="10" value="{{ resultado.equipo_visitante }}" class="form-control" readonly> 
+    </p>
+        
+{% endblock %}

@@ -10,7 +10,7 @@
        
         <p>
             Equipo Local : 
-            <select name="equipo_local">
+            <select name="equipo_local" class="form-control">
                 <option value=""></option>
                 {% for equipo in equipos %}
                     <option value="{{equipo.id}}">
@@ -22,7 +22,7 @@
         
         <p>
             Equipo Visitante :
-            <select name="equipo_visitante">
+            <select name="equipo_visitante" class="form-control">
                 <option value=""></option>
                 {% for equipo in equipos %}
                     <option value="{{equipo.id}}">
@@ -33,15 +33,15 @@
         </p>
 
         <p>
-            Fecha : <input type="date" name="fecha"> 
+            Fecha : <input type="date" name="fecha" class="form-control" class="form-control"> 
         </p>
 
         <p>
-            Hora : <input type="time" name="hora"> 
+            Hora : <input type="time" name="hora" class="form-control" class="form-control"> 
         </p>
         
         <p>
-            <input type="submit" value="Guardar"> 
+            <input type="submit" value="Guardar" class="btn btn-secondary"> 
         </p>
 
     </form>
