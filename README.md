@@ -13,6 +13,9 @@ Una vez lenvantado el entorno, se debe correr las migraciones con los siguientes
 ```bash
 python manage.py makemigrations
 ```
+```bash
+python manage.py migrate
+```
 
 ## Urls
 El Proyecto cuenta con las siguients url.
