@@ -13,5 +13,11 @@
     <p>
         Equipo Visitante : <input type="number" name="equipo_visitante" min="0" max="10" value="{{ resultado.equipo_visitante }}" class="form-control" readonly> 
     </p>
+
+    <p>
+        <a href="{% url 'buscar_resultado' %}">
+            <input value="Volver" class="btn btn-secondary"> 
+        </a>
+    </p>
         
 {% endblock %}
