@@ -39,4 +39,4 @@ Super Usuario solicitado:
 Acceso: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
 ## Video Explicativo
-https://drive.google.com/file/d/1-EkwZPV4nK8sHhpoiYN90GJ5NThjmgkV/view?usp=sharing
+https://drive.google.com/file/d/1gU4laFDdxVQtgj6s_e-GJCkOM9j6ZktG/view?usp=sharing
