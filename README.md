@@ -27,3 +27,9 @@ El Proyecto cuenta con las urls para ver, cargar, editar y eliminar 4 tipo de en
 Ademas de las urls para el manejo de sesion y mantenimiento de cuenta de usuario. 
 
 Cada una de ellas es accesible desde el menu del navbar. Y en el footer, tenemos el enlace Acerca de mi que dispone de una pagina mas con informacion personal 
+
+## Acceso a admin 
+Super Usuario solicitado: 
+user : coderhouse
+Pass : coderhouse
+Acceso: http://127.0.0.1:8000/admin/
