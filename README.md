@@ -18,18 +18,25 @@ python manage.py migrate
 ```
 
 ## Urls
-El Proyecto cuenta con las urls para ver, cargar, editar y eliminar 4 tipo de entidades 
-  equipos
-  partidos
-  resultados
-  posiciones
 
-Ademas de las urls para el manejo de sesion y mantenimiento de cuenta de usuario. 
+El Proyecto cuenta con las urls para ver, cargar, editar y eliminar 4 tipos de entidades:
 
-Cada una de ellas es accesible desde el menu del navbar. Y en el footer, tenemos el enlace Acerca de mi que dispone de una pagina mas con informacion personal 
+- Equipos
+- Partidos
+- Resultados
+- Posiciones
 
-## Acceso a admin 
-Super Usuario solicitado: 
-user : coderhouse
-Pass : coderhouse
-Acceso: http://127.0.0.1:8000/admin/
+Además de las urls para el manejo de sesiones y mantenimiento de cuenta de usuario.
+
+Cada una de ellas es accesible desde el menú del navbar. Y en el footer, tenemos el enlace "Acerca de mí" que dispone de una página más con información personal.
+
+## Acceso a admin
+
+Super Usuario solicitado:
+- Usuario: coderhouse
+- Pass: coderhouse
+
+Acceso: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+
+## Video Explicativo
+https://drive.google.com/file/d/1-EkwZPV4nK8sHhpoiYN90GJ5NThjmgkV/view?usp=sharing
