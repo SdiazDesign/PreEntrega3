@@ -1,5 +1,5 @@
 ## Proyecto
-Proyecto Demo para la pre entrega 3 del curso de CoderHouse sobre Python
+Proyecto Demo para el proyecto Final del curso de CoderHouse sobre Python
 El proyecto, con su respectiva App, simula la carga de equipos, partidos y resultados para un torneo de Futbol
 
 ## Installation
@@ -18,13 +18,12 @@ python manage.py migrate
 ```
 
 ## Urls
-El Proyecto cuenta con las siguients url.
+El Proyecto cuenta con las urls para ver, cargar, editar y eliminar 4 tipo de entidades 
+  equipos
+  partidos
+  resultados
+  posiciones
 
-- http://127.0.0.1:8000/App/
-- http://127.0.0.1:8000/App/crear_equipo/
-- http://127.0.0.1:8000/App/crear_partido/
-- http://127.0.0.1:8000/App/crear_resultado/
-- http://127.0.0.1:8000/App/get_resultado/
-- http://127.0.0.1:8000/App/buscar_resultado/
+Ademas de las urls para el manejo de sesion y mantenimiento de cuenta de usuario. 
 
-Igualmente, cada una de ellas es accesible desde el menu del navbar. 
+Cada una de ellas es accesible desde el menu del navbar. Y en el footer, tenemos el enlace Acerca de mi que dispone de una pagina mas con informacion personal 
