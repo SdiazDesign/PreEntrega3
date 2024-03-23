@@ -1,0 +1,42 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Posiciones</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Equipo</th>
+                <th scope="col">Posición</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for posicion in posiciones %}
+                <tr>
+                    <td>{{ posicion.equipo.nombre }}</td>
+                    <td>{{ posicion.puntos }}</td>
+                    <td>
+                        <a href="{% url 'ver_posicion' posicion.pk %}">
+                            <button type="button" class="btn btn-info">Ver</button>
+                        </a>
+                        <a href="{% url 'actualizar_posicion' posicion.pk %}">
+                            <button type="button" class="btn btn-warning">Editar</button>
+                        </a>
+                        <a href="{% url 'eliminar_posicion' posicion.pk %}">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+
+    <a href="{% url 'crear_posicion' %}">
+        <button type="button" class="btn btn-success">Cargar Posición</button>
+    </a>
+
+{% endblock %}

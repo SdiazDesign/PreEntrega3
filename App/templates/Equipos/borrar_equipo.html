@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Eliminar Equipo</h1>
+
+    <form action="" method="POST"> 
+        
+        {% csrf_token %}
+        
+        <p>
+            Quiere Elimiar el Equipo {{ object.nombre }} ? 
+        </p>
+        
+        <p>
+            <input type="submit" value="Confirmar" class="btn btn-danger"> 
+        </p>
+
+    </form>
+
+{% endblock %}

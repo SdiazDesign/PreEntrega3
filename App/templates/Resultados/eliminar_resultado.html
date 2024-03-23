@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Resultado</h1>
+    
+    <form action="/App/eliminar_resultado/{{ pk }}" method="post"> 
+        
+        {% csrf_token %}
+
+        <p>¿Quiere eliminar al Resultado: {{ resultado.partido.equipo_local.nombre }} VS {{ resultado.partido.equipo_visitante.nombre }} ? </p>
+
+        <p>
+            Goles Equipo Local : <input type="number" name="equipo_local" value="{{ resultado.equipo_local }}" class="form-control" readonly> 
+        </p>
+    
+        <p>
+            Goles Equipo Visitante : <input type="number" name="equipo_visitante" value="{{ resultado.equipo_visitante }}" class="form-control" readonly> 
+        </p>
+
+        <input type="submit" value="Eliminar" class="btn btn-danger">
+
+    </form>
+
+{% endblock %}

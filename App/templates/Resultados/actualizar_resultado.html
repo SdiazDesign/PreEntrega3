@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Actualizar Resultado</h1>
+
+    <form action="" method="post"> 
+        
+        {% csrf_token %}
+
+        <p>
+           Partido : <input name="partido" value="{{ initial.partido }}" class="form-control" readonly>  
+        </p>
+
+        <p>
+            Goles Equipo Local : <input type="number" value="{{ initial.equipo_local }}" name="equipo_local" min="0" max="10" class="form-control">  
+        </p>
+
+        <p>
+            Goles Equipo Visitante : <input type="number" value="{{ initial.equipo_visitante }}" name="equipo_visitante" min="0" max="10" class="form-control"> 
+        </p>
+        
+        <br><br>
+        
+        <input type="submit" value="Guardar Cambios" class="btn btn-success">
+
+    </form>
+
+{% endblock %}

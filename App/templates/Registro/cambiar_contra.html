@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Cambiar Contraseña</h1>
+
+    <form action="" method="POST"> 
+        
+        {% csrf_token %}
+
+        {{form}}
+        
+        <button type="submit"> Cambiar Contraseña </button>
+        
+    </form>
+
+{% endblock %}

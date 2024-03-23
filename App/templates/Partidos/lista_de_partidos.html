@@ -1,0 +1,46 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Partidos</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Equipo Local</th>
+                <th scope="col">Equipo Visitante</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for partido in partidos %}
+                <tr>
+                    <td>{{ partido.equipo_local }}</td>
+                    <td>{{ partido.equipo_visitante }}</td>
+                    <td>{{ partido.fecha }}</td>
+                    <td>{{ partido.hora }}</td>
+                    <td>
+                        <a href="{% url 'ver_partido' partido.pk %}">
+                            <button type="button" class="btn btn-info">Ver</button>
+                        </a>
+                        <a href="{% url 'actualizar_partido' partido.pk %}">
+                            <button type="button" class="btn btn-warning">Editar</button>
+                        </a>
+                        <a href="{% url 'eliminar_partido' partido.pk %}">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+
+    <a href="{% url 'crear_partido' %}">
+        <button type="button" class="btn btn-success">Nuevo Partido</button>
+    </a>
+
+{% endblock %}

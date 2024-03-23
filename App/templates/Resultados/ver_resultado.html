@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Detalle Resultado</h1>
+
+    <p>
+        Partido : <input name="equipo_local" value="{{ resultado.partido }}" class="form-control" readonly>  
+    </p>
+
+    <p>
+        Goles Equipo Local : <input type="number" value="{{ resultado.equipo_local }}" class="form-control" readonly>  
+    </p>
+
+    <p>
+        Goles Equipo Visitante : <input type="number" value="{{ resultado.equipo_visitante }}" class="form-control" readonly> 
+    </p>
+
+    <br>
+    
+    <p>
+        <a href="{% url 'resultados' %}">
+            <input value="Volver" class="btn btn-secondary"> 
+        </a>
+    </p>
+        
+{% endblock %}

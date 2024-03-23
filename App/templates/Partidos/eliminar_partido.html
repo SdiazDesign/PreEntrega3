@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Partido</h1>
+    
+    <form action="/App/eliminar_partido/{{ pk }}" method="post"> 
+        
+        {% csrf_token %}
+
+        <p>¿Quiere eliminar al partido: {{ partido.equipo_local.nombre }} VS {{ partido.equipo_visitante.nombre }} ? </p>
+
+        <p>
+            Fecha : <input type="datetime" name="fecha" value="{{ partido.fecha }}" class="form-control" readonly> 
+        </p>
+    
+        <p>
+            Hora : <input type="time" name="hora" value="{{ partido.hora }}" class="form-control" readonly> 
+        </p>
+
+        <input type="submit" value="Eliminar" class="btn btn-danger">
+
+    </form>
+
+{% endblock %}

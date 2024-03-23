@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Actualizar Posición</h1>
+
+    <form action="" method="post"> 
+        
+        {% csrf_token %}
+
+        <p>
+           Equipo : <input name="equipo" value="{{ initial.equipo }}" class="form-control" readonly>  
+        </p>
+
+        <p>
+            Puntos : <input type="number" value="{{ initial.puntos }}" name="puntos" min="0" max="30" class="form-control">  
+        </p>
+
+        <br><br>
+        
+        <input type="submit" value="Guardar Cambios" class="btn btn-success">
+
+    </form>
+
+{% endblock %}

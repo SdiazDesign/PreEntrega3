@@ -1,0 +1,40 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Equipos</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in equipos %}
+                <tr>
+                    <td>{{ equipo.nombre }}</td>
+                    <td>
+                        <a href="{% url 'ver_equipo' equipo.pk %}">
+                            <button type="button" class="btn btn-info">Ver</button>
+                        </a>
+                        <a href="{% url 'editar_equipo' equipo.pk %}">
+                            <button type="button" class="btn btn-warning">Editar</button>
+                        </a>
+                        <a href="{% url 'eliminar_equipo' equipo.pk %}">
+                            <button type="button" class="btn btn-danger">Eliminar</button>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+
+    <a href="{% url 'nuevo_equipo' %}">
+        <button type="button" class="btn btn-success">Nuevo Equipo</button>
+    </a>
+
+{% endblock %}

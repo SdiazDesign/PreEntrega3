@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Eliminar Posición</h1>
+    
+    <form action="/App/eliminar_posicion/{{ pk }}" method="post"> 
+        
+        {% csrf_token %}
+
+        <p>¿Quiere eliminar la Posición: {{ posicion.equipo }} = {{ posicion.puntos }} ? </p>
+
+        <input type="submit" value="Eliminar" class="btn btn-danger">
+
+    </form>
+
+{% endblock %}

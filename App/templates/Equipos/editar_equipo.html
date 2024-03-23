@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Editar Equipo</h1>
+
+    <form action="" method="POST"> 
+        
+        {% csrf_token %}
+        
+        {{form.as_p}}
+        
+        <p>
+            <input type="submit" value="Guardar Cambios" class="btn btn-secondary"> 
+        </p>
+
+    </form>
+
+{% endblock %}

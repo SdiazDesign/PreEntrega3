@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Detalle Partido</h1>
+
+    <p>
+        Equipo Local : <input name="equipo_local" value="{{ partido.equipo_local.nombre }}" class="form-control" readonly>  
+    </p>
+
+    <p>
+        Equipo Visitante : <input name="equipo_visitante" value="{{ partido.equipo_visitante.nombre }}" class="form-control" readonly> 
+    </p>
+
+    <p>
+        Fecha : <input type="datetime" name="fecha" value="{{ partido.fecha }}" class="form-control" readonly> 
+    </p>
+
+    <p>
+        Hora : <input type="time" name="hora" value="{{ partido.hora }}" class="form-control" readonly> 
+    </p>
+
+    <br>
+    
+    <p>
+        <a href="{% url 'partidos' %}">
+            <input value="Volver" class="btn btn-secondary"> 
+        </a>
+    </p>
+        
+{% endblock %}

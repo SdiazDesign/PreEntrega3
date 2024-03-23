@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Detalle Posición</h1>
+
+    <p>
+        Equipo : <input name="equipo" value="{{ posicion.equipo }}" class="form-control" readonly>  
+    </p>
+
+    <p>
+        Puntos : <input name="puntos" value="{{ posicion.puntos }}" class="form-control" readonly> 
+    </p>
+
+    <br>
+    
+    <p>
+        <a href="{% url 'posiciones' %}">
+            <input value="Volver" class="btn btn-secondary"> 
+        </a>
+    </p>
+        
+{% endblock %}

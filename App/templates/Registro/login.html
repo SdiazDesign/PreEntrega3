@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Login</h1>
+
+    <form action="" method="POST"> 
+        
+        {% csrf_token %}
+        
+        {{form}} 
+       
+        <br>
+        <p>
+            <input type="submit" value="Ingresar" class="btn btn-secondary"> 
+        </p>
+
+    </form>
+
+{% endblock %}

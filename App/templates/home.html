@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Freelancer - Start Bootstrap Theme</title>
+        <title>Torneo</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/football-157930_1280.png' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -22,20 +22,63 @@
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'home' %}">
-                    {% block nombre %}
-  
-                    {% endblock %}
+                    Torneo
                 </a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'crear_equipo' %}">Crear Equipo</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'crear_partido' %}">Crear Partido</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'crear_resultado' %}">Crear Resultado</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'equipos' %}">Equipos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'partidos' %}">Partidos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'resultados' %}">Resultados</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'posiciones' %}">Posiciones</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'buscar_resultado' %}">Buscar Resultado</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% if user.is_authenticated %}
+                                    {% if user.avatar_set.last %}
+                                        <img src="{{user.avatar_set.last.imagen.url}}" width="50px" height="50px" alt="" style="border-radius: 25px;">
+                                    {% else %}
+                                        <img src="{% static 'assets/img/avatar-defecto.jpg' %}" width="50px" height="50px" alt="" style="border-radius: 25px;">
+                                    {% endif %} 
+                                {% else %}   
+                                    <img src="{% static 'assets/img/avatar-defecto.jpg' %}" width="50px" height="50px" alt="" style="border-radius: 25px;">
+                                {% endif %} 
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <b>{{user.first_name}} {{user.last_name}}</b>
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'Editar Usuario' %}">Editar mi Cuenta</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'Agregar Avatar' %}">Cambiar Avatar</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'Cambiar Contraseña' %}">Cambiar Password</a>
+                                    </li>  
+
+                                    <li><hr class="dropdown-divider"></li>
+                                
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'registrarse' %}">Registrarse</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{% url 'login' %}">Iniciar Sesión</a>
+                                    </li>
+                                {% endif %} 
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -43,10 +86,14 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="{% static 'assets/img/football-157930_1280.png' %}" alt="..." />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Torneo</h1>
+                <h1 class="masthead-heading text-uppercase mb-2">Torneo</h1>
+                
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mt-4" src="{% static 'assets/img/football-157930_1280.png' %}" alt="..." 
+                    style="width: 120px; height: 120px;"
+                />
+                
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -55,6 +102,9 @@
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">
+
+                    <h3>{{ mensaje }}</h3>
+                    
                     {% block section %}
   
                     {% endblock %}
@@ -68,16 +118,16 @@
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">Localización</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            Bhaía Blanca
                             <br />
-                            Clark, MO 65243
+                            Bs As, Argentina
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <h4 class="text-uppercase mb-4">Redes Sociales</h4>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
@@ -85,10 +135,10 @@
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">Acerca de Mi</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+                            Un poco de información personal..
+                            <a href="{% url 'aboutme' %}">Conóceme</a>
                             .
                         </p>
                     </div>
@@ -97,7 +147,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <div class="container"><small>Copyright &copy; Your Website 2024</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->

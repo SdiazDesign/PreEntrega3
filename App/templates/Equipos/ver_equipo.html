@@ -1,0 +1,23 @@
+{% extends "home.html" %}
+
+{% block section %}
+
+    <h1>Detelle Equipo</h1>
+
+    <p>
+        Nombre del Equipo  
+        <label> {{ object.nombre }} </label> 
+    </p>
+
+    <p>
+        Fecha de Fundación
+        <label> {{ object.fechafundacion }} </label> 
+    </p>
+    
+    <p>
+        <a href="{% url 'equipos' %}">
+            <input value="Volver" class="btn btn-secondary"> 
+        </a>
+    </p>
+
+{% endblock %}
